@@ -1,0 +1,20 @@
+ul {
+  li {
+    display: inline-block;
+    border-radius: 6px;
+    &:hover {
+      background: var(--secondary);
+    }
+    transition: 0.4s;
+  }
+}
+
+nav {
+  background: var(--primary);
+  color: white;
+
+  .logo {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
