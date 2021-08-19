@@ -1,8 +1,15 @@
 <div class="dflex flex-column">
   <img [src]="cocktail.img" [alt]="cocktail.name" class="mb-20" />
   <h3 class="mb-20">{{ cocktail.name }}</h3>
+  <ul class="list-primary mb-20">
+    <li *ngFor="let ingredient of cocktail.ingredients" class="d-flex flex-row">
+      <span class="flex-fill">{{ ingredient.name }} </span>
+      <span class="badge">{{ ingredient.quantity }} {{ ingredient.unit }}</span>
+    </li>
+  </ul>
   <p class="mb-20">{{ cocktail.description }}</p>
-  <div>
+  <div class="d-flex flex-row flex-justify-content-between">
     <button class="btn btn-primary">Edit Cocktail</button>
+    <button class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
   </div>
 </div>

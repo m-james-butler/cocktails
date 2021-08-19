@@ -96,6 +96,10 @@ body {
   margin: 10px;
 }
 
+.ms-10 {
+  margin: 0 10px;
+}
+
 .m-20 {
   margin: 20px;
 }
@@ -104,19 +108,28 @@ body {
   margin-bottom: 20px;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
 //theme
+
+.list-primary-action {
+  li {
+    cursor: pointer;
+    &:hover {
+      border: 3px solid var(--secondary);
+      border-radius: 3px;
+    }
+    transition: all 0.4s;
+  }
+}
+
 .list-primary {
   li {
     padding: 10px 15px;
     border: 1px solid var(--lightgray);
     border-top: 0;
-    &:hover {
-      background-color: var(--primary);
-      color: white;
-      font-weight: 500;
-      cursor: pointer;
-    }
-    transition: all 0.4s;
   }
   li:first-child {
     border-top: 1px solid var(--lightgray);
@@ -144,6 +157,17 @@ body {
     }
     transition: background-color 0.4s;
   }
+}
+
+.badge {
+  background-color: var(--secondary);
+  border-radius: 6px;
+  padding: 2px 5px;
+  color: white;
+}
+
+.active {
+  background-color: var(--secondary);
 }
 
 //debug
