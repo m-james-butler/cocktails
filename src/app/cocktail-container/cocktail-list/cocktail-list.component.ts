@@ -13,7 +13,6 @@ export class CocktailListComponent implements OnInit {
     name: '',
     img: '',
     description: '',
-    ingredients: [],
   };
   @Output() private changeCocktail: EventEmitter<number> = new EventEmitter();
 
