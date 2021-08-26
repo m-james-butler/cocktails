@@ -1,1 +1,81 @@
-<p>cocktail-form works!</p>
+<h3 class="mb-20">Add or Edit a Cocktail</h3>
+
+<form [formGroup]="cocktailForm" (ngSubmit)="submit()">
+  <div class="form-group d-flex flex-row pl-10 pt-10">
+    <span class="flex-50 flex-fill">
+      <label for="cocktailname">Cocktail Name:</label>
+    </span>
+    <span class="flex-50">
+      <input id="cocktailname" type="text" formControlName="name" />
+    </span>
+  </div>
+
+  <div class="form-group d-flex flex-row pl-10">
+    <span class="flex-50 flex-fill">
+      <label for="image">Image URL:</label>
+    </span>
+    <span class="flex-50">
+      <input id="image" type="text" formControlName="img" />
+    </span>
+  </div>
+
+  <div class="form-group d-flex flex-row pl-10">
+    <span class="flex-50 flex-fill">
+      <label for="cocktaildescription">Description:</label>
+    </span>
+    <span class="flex-50">
+      <input
+        type="text"
+        id="cocktaildescription"
+        formControlName="description"
+      />
+    </span>
+  </div>
+  <hr />
+  <button (click)="addIngredient()" type="button" class="btn btn-primary ml-20">
+    + Ingredient
+  </button>
+  <hr />
+
+  <div formArrayName="ingredients">
+    <div
+      [formGroupName]="index"
+      *ngFor="let ingredient of ingredients.controls; let index = index"
+    >
+      <div class="form-group d-flex flex-row pl-10">
+        <span class="flex-75 flex-fill">
+          <label for="ingredientName">Ingredient Name: </label>
+          <input type="text" formControlName="name" id="ingredientName" />
+        </span>
+        <span class="flex-15 flex-fill">
+          <label for="ingredientQuantity">Quantity: </label>
+          <input
+            type="number"
+            formControlName="quantity"
+            id="ingredientQuantity"
+          />
+        </span>
+        <span class="flex-10 pr-10">
+          <label for="ingredientUnit">Unit: </label>
+          <select formControlName="unit" id="ingredientUnit">
+            <option
+              *ngFor="let unit of units; let i = index"
+              [value]="units[i].id"
+            >
+              {{ units[i].name }}
+            </option>
+          </select>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions d-flex flex-row flex-justify-content-center mb-20">
+    <button [disabled]="cocktailForm.invalid" class="btn btn-primary">
+      Submit
+    </button>
+    <button class="btn btn-secondary" type="button" routerLink="../">
+      Cancel
+    </button>
+  </div>
+</form>

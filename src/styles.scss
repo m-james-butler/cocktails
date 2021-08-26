@@ -75,6 +75,18 @@ body {
   flex: 1 1 50%;
 }
 
+.flex-75 {
+  flex: 1 1 1 75%;
+}
+
+.flex-10 {
+  flex: 1 1 1 10%;
+}
+
+.flex-15 {
+  flex: 1 1 1 15%;
+}
+
 //util
 .p-10 {
   padding: 10px;
@@ -92,6 +104,10 @@ body {
   padding-left: 10px;
 }
 
+.pt-10 {
+  padding-top: 10px;
+}
+
 .m-10 {
   margin: 10px;
 }
@@ -102,6 +118,10 @@ body {
 
 .m-20 {
   margin: 20px;
+}
+
+.ml-20 {
+  margin-left: 20px;
 }
 
 .mb-20 {
@@ -142,6 +162,30 @@ body {
   }
 }
 
+hr {
+  margin: 20px 0px;
+  border-top: 1px solid #ddd;
+}
+
+input {
+  border: 1px solid var(--secondary);
+  border-radius: 6px;
+  padding: 5px;
+  width: 175px;
+  margin-right: 10px;
+}
+
+select {
+  border: 1px solid var(--secondary);
+  border-radius: 6px;
+  padding: 5px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .btn {
   padding: 10px 15px;
   background-color: white;
@@ -157,6 +201,14 @@ body {
     }
     transition: background-color 0.4s;
   }
+  &-secondary {
+    background-color: var(--accent);
+    color: white;
+    &:hover {
+      background-color: red;
+    }
+    transition: background-color 0.4s;
+  }
 }
 
 .badge {
@@ -168,6 +220,7 @@ body {
 
 .active {
   background-color: var(--secondary);
+  color: white;
 }
 
 //debug
